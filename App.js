@@ -1,15 +1,34 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-const heading=[React.createElement("div"
-,{id:"div"},
-React.createElement("div"
-,{id:"adiv"},"Another div"),[React.createElement("h1"
-,{id:"heading"},"This is heading"),React.createElement("h2"
-,{id:"heading2"},"This is heading2")]),React.createElement("div"
-,{id:"div"},
-React.createElement("div"
-,{id:"adiv2"},"Another div"),[React.createElement("h1"
-,{id:"heading"},"This is heading"),React.createElement("h2"
-,{id:"heading2"},"This is heading2")])]
-const root=ReactDOM.createRoot(document.getElementById("root"));
+//HTML like syntax
+//Jsx code is transpiled before it reaches the browser ->DONE by parcel using babel
 
-root.render(heading);
+  const heading=
+  (<h1 className="head">Jsx heading</h1>)
+
+
+  //React  functional Component
+  //Class Based Component-->OLd way of writing components
+  //Functional Component-> New way of writing components
+const Title=()=>{
+  return <h1>Titleee</h1>
+}
+
+const F=function(){
+  return <h2>Heading 2</h2>
+}
+const HeadingComponent=()=>{
+  return  (<div className="container">
+    {heading  }
+    {2+"2"} 
+    <Title/>
+    <F/>
+    <h1 className="heading">Namaste react functional component </h1>
+  </div>)
+}
+  const root =ReactDOM.createRoot(document.getElementById("root"));
+
+
+
+root.render(<HeadingComponent/>);
