@@ -1,3 +1,187 @@
-.heading{
-    color: red;
+/* --- Header Styles --- */
+.header {
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  padding: 10px 20px; */
+
+   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  /* Removed the border and added a soft shadow below */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  width: 100px;
+  flex-shrink: 0; /* Prevents the logo from shrinking */
+}
+
+/* This container will scroll horizontally if its content is too wide */
+.nav-items {
+  overflow-x: auto; /* Show horizontal scrollbar ONLY when needed */
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on mobile */
+  scrollbar-width: thin; /* Makes scrollbar less intrusive */
+}
+
+/* The navigation unordered list */
+.nav-items > ul {
+  display: flex;
+  white-space: nowrap; /* Forces all list items onto one line */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items > ul > li {
+  padding: 10px 15px;
+}
+
+/* --- Restaurant Card Styles --- */
+.res-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 25px;
+}
+
+.res-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+  overflow: hidden; /* This is crucial for the image's rounded corners */
+}
+
+.res-card:hover {
+  transform: scale(1.04);
+}
+
+.res-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover; /* This prevents images from stretching or squishing */
+}
+
+.res-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  padding: 10px 15px 0 15px;
+  margin: 0;
+}
+
+.res-card h4 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #666;
+  padding: 2px 15px;
+  margin: 0;
+}
+
+/* --- Responsive Fix for Header on Extremely Small Screens --- */
+@media screen and (max-width: 400px) {
+  .header {
+    /* Stack the logo and nav vertically */
+    flex-direction: column;
+    /* Align items to the left for a clean look */
+    align-items: flex-start;
+    gap: 15px; /* Add space between the stacked logo and nav bar */
+  }
+
+  .nav-items {
+    /* Allow the nav bar to take the full width */
+    width: 100%;
+  }
+}
+.body {
+  margin-top: 25px; /* This creates the gap between the Header and the Body */
+}
+
+.filter {
+  display: flex;              /* Use Flexbox for alignment */
+  justify-content: flex-end;  /* Push all items to the end (the right side) */
+  padding: 0 40px 20px 40px;  /* Adds space: 40px on sides, 20px on bottom */
+  border-bottom: 1px solid #f0f0f0; /* Optional: keeps the separator line */
+}
+
+/* 3. Keep the existing beautiful styles for the button itself */
+.filter-btn {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  color: #555;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease-in-out;
+}
+
+.filter-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-color: #b0b0b0;
+  color: #000;
+}
+/* Shimmer.css */
+
+/* Define the shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+/* The base style for any element that shimmers */
+.shimmer-bg {
+  animation-duration: 1.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-name: shimmer;
+  animation-timing-function: linear;
+  background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-size: 800px 104px;
+}
+
+/* --- Shimmer Card Styles --- */
+/* Mimics the .res-card style */
+.shimmer-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Mimics the .res-card img style */
+.shimmer-img {
+  width: 100%;
+  height: 160px; /* Same height as the real image */
+  background-color: #e0e0e0;
+  margin-bottom: 10px;
+}
+
+/* Mimics the .res-card h3 style */
+.shimmer-h3 {
+  height: 20px; /* Approximate height of the h3 tag */
+  width: 75%;   /* Shorter width to look like text */
+  background-color: #e0e0e0;
+  margin: 10px 15px;
+  border-radius: 4px;
+}
+
+/* Mimics the .res-card h4 style */
+.shimmer-h4 {
+  height: 16px; /* Approximate height of the h4 tag */
+  width: 90%;   /* Make it almost full width */
+  background-color: #e0e0e0;
+  margin: 6px 15px;
+  border-radius: 4px;
 }

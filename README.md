@@ -22,3 +22,6 @@
       -> parcel used Babel which  is resp for converting jsx to react.create element which is a js object which is converted to html by root render
       
 
+// learn how microservices interact with each other
+
+//optional chaining
